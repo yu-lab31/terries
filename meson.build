@@ -5,7 +5,7 @@ project(
   version : 'v0.0.1-beta.3',
   default_options : [
     'warning_level=3',
-    'c_std=c11',
+    'c_std=c23',
   ],
 )
 
@@ -38,3 +38,10 @@ shared_library(
   dependencies: [pthread],
   link_args: static_link_args + windows_link_args + dynamic_link_args
 )
+
+arithmetic_test = executable(
+  'arithmetic_test',
+  sources + [ 'test_case/arithmetic_test.c' ]
+)
+
+test('arithmetic test', arithmetic_test)

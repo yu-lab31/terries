@@ -1,7 +1,6 @@
 #include <stddef.h>
-#include <stdint.h>
 
-#include "include/compile.h"
+#include "arithmetic/arithmetic.h"
 #include "include/trapno.h"
 
 DLLEXPORT void add(int32_t x, int32_t y, RESULT(int32_t))
