@@ -4,6 +4,7 @@
 
 #include "trapno.h"
 
+const char *trap_messages[TRAP_VARIETIES];
 pthread_once_t done;
 
 void init_trap_messages()
@@ -13,7 +14,7 @@ void init_trap_messages()
         "result out of range defined by its type";
 }
 
-char *get_trap_message(TrapNo no)
+const char *get_trap_message(TrapNo no)
 {
     pthread_once(&done, init_trap_messages);
     if (no < 0 || no >= TRAP_VARIETIES) {

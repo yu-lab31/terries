@@ -7,8 +7,6 @@ typedef enum {
     TRAP_VARIETIES = 2,
 } TrapNo;
 
-static char *trap_messages[TRAP_VARIETIES];
-
-char *get_trap_message(TrapNo no);
+const char *get_trap_message(TrapNo no);
 
 #endif // __TRAPNO_H__

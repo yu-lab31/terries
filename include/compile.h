@@ -8,7 +8,6 @@
  * trapno is set to nonzero and message is pointed to a c_str that's not in
  * heap.
  * */
-;
 #define RESULT(type) type *presult, int32_t *ptrapno, const char **ptrap_message
 
 #define R_RESULT (*presult)
