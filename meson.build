@@ -31,12 +31,17 @@ dynamic_link_args = [
   '-Wl,-Bdynamic,--no-whole-archive'
 ]
 
+cross_build_args = []
+if host_machine.system() == 'windows'
+  cross_build_args = static_link_args + windows_link_args + dynamic_link_args
+endif
+
 shared_library(
   'arithmetic',
   sources,
   include_directories: inc_root,
   dependencies: [pthread],
-  link_args: static_link_args + windows_link_args + dynamic_link_args
+  link_args: cross_build_args
 )
 
 arithmetic_test = executable(
