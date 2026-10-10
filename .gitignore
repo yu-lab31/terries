@@ -56,3 +56,7 @@ dkms.conf
 
 # Analyzations
 compile_commands.json
+.vs/
+*.user
+csharp/bin/
+csharp/obj/
